@@ -1,2 +1,2 @@
 # SPS30
-SPS30 OPC Library
+SPS30 OPC test code
