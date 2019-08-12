@@ -13,7 +13,7 @@
 //The SPS30 system runs on 5V and draws .05A. The system can provide new data
 //once every second.
 
-#define SPS_SERIAL Serial1                                                      //Serial Pin Macro
+#define SPS_SERIAL Serial5                                                      //Serial Pin Macro
 #define SPS_LOOP 1500
 
 int t = 0;                                                                      //Timer variable for the SPS30 loop. The SPS30 must read data no faster than 1Hz.
