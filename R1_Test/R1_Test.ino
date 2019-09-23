@@ -2,7 +2,7 @@
 
 const uint8_t SSpin = 15;
 byte test = 0;
-//int i = 0;
+int i = 0;
 uint16_t checksumR1 = 0;
 //unsigned int checksumCalc = 0;
 
@@ -11,6 +11,7 @@ uint16_t com[16] = {0};
 
 void setup() 
 {
+  pinMode(SSpin,OUTPUT);
   Serial.begin(9600);
   SPI.begin();         // intialize SPI in Arduino
   delay(5000);
@@ -21,7 +22,7 @@ void setup()
 
 void loop()
 {
- // if(i==10)
+  if(i==10)
   {
     Serial.println("Shutting down");
     delay(10);
@@ -54,9 +55,10 @@ void loop()
   
   Serial.println();
 
-  for (int x=0; x<15; x++){
+  for (int x=0; x<16; x++){
     com[x] = bytes2int(raw[(x*2)], raw[(x*2+1)]);
   }
+  
  
 //  com[0] = bytes2int(raw[0],raw[1]);
 //  com[1] = bytes2int(raw[2],raw[3]);

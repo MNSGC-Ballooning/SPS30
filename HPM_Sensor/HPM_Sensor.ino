@@ -11,6 +11,7 @@ unsigned short nTot = 0;
 bool autoSend = true;
 bool goodLog = false;
 unsigned short badLog = 0;
+unsigned short counter = 0;
 
 void setup() {
 Serial.begin(9600);
@@ -44,6 +45,8 @@ void initHPM(){
 }
 
 void powerON(){
+  counter++;
+  Serial.println(String(counter));
   byte checkIt[2] = {0};
   
   HPM_SERIAL.write(0x68);
